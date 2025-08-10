@@ -19,7 +19,7 @@ npm install
 npx tailwindcss -i ./style.css -o ./output.css --watch
 ```
 
-Open `cozy-to-do-list.html` in your browser.
+Open `index.html` in your browser.
 
 ## Tech Stack
 
