@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cozy To-Do List</title>
+    <link href="output.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <body
+    class="bg-[url('castle.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center min-h-screen"
+  >
+    <!-- main container -->
+    <div
+      id="widget-container"
+      class="bg-quaternary backdrop-blur-sm p-6 rounded-lg shadow-lg w-full max-w-md "
+    >
+      <!-- header -->
+              <div class="flex items-center justify-center gap-1 mb-4">
+          <img src="favorite.png" alt="Icon" class="w-8 h-8 animate-pulse" />
+          <h1 class="text-2xl text-secondary">
+            to-do list
+          </h1>
+        </div>
+
+      <!-- top section: date & progress -->
+      <div class="flex justify-between items-center mb-6">
+        <!-- date box -->
+        <div
+          id="date-box"
+          class="bg-quinary text-white p-4 rounded-md text-center"
+        >
+          <p id="day-name" class="font-bold">Saturday</p>
+          <p id="day-number" class="text-3xl font-bold">19</p>
+          <p id="month-name">July</p>
+        </div>
+
+        <!-- progress section -->
+        <div class="w-3/4">
+          <div class="flex justify-end items-center gap-1">
+            <p class="text-right text-secondary">Progress</p>
+            <img src="clock.png" alt="Progress icon" class="w-7 h-7 hover:scale-110 hover: transition-transform duration-300 cursor-pointer" />
+          </div>
+          
+          <div id="pixel-progress-container" class="mt-1 h-8 relative">
+            <!-- pixel art progress bar -->
+            <div id="pixel-progress-bar" class="grid h-full w-full pixel-grid">
+              <!-- progress blocks -->
+              <div class="pixel-meter block-1"></div>
+              <div class="pixel-meter block-2"></div>
+              <div class="pixel-meter block-3"></div>
+              <div class="pixel-meter block-4"></div>
+              <div class="pixel-meter block-5"></div>
+              <div class="pixel-meter block-6"></div>
+              <div class="pixel-meter block-7"></div>
+              <div class="pixel-meter block-8"></div>
+            </div>
+          </div>
+          <p id="progress-text" class="text-xs text-secondary text-right mt-1">
+            0 / 0 tasks done
+          </p>
+        </div>
+      </div>
+
+      <!-- input form -->
+      <form id="add-task-form" class="flex items-center gap-3 mb-6">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Input your task!"
+          class="flex-grow p-3 border-2 border-quinary rounded-md focus:outline-none focus:border-secondary"
+        />
+        <button
+          type="submit"
+          id="add-task-button"
+          class="bg-quinary text-white p-3 border-b-4 border-secondary active:border-b-2"
+        >
+          Add Task
+        </button>
+      </form>
+
+      <!-- task list section -->
+      <div>
+        <div class="flex items-center gap-2 mb-2 ">
+          <h2 class="text-secondary">My Tasks</h2>
+          <img src="downloading.png" alt="Tasks icon" class="w-5 h-5 animate-bounce" />
+        </div>
+        <div class="max-h-[300px] overflow-y-auto [&::-webkit-scrollbar]:w-2
+        [&::-webkit-scrollbar]:hidden">
+        <ul id="task-list">
+          <!-- tasks will be dynamically added here by JS -->
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
